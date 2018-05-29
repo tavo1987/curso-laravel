@@ -9,10 +9,15 @@ class UsersModuleTest extends TestCase
     /** @test */
     function it_loads_users_list_page()
     {
+    	$this->withoutExceptionHandling();
+
         $response = $this->get('/users');
 
 	    $response->assertStatus(200)
-	             ->assertSee('Lista de Usuarios');
+	             ->assertSee('Lista de Usuarios')
+		        ->assertSee('John')
+		        ->assertSee('Jane');
+
     }
 
 	/** @test */
