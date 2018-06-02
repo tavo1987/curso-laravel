@@ -1,8 +1,8 @@
 <?php
 
-Route::get('/', 'HomeController');
+Route::get('/', 'HomeController')->name('home');
 
-Route::get('/users', 'UserController@index');
+Route::get('/users', 'UserController@index')->name('users');
 
 Route::get('/users/{id}', 'UserController@show')
 	->where('id', '\d+');
