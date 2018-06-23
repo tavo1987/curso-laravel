@@ -1,6 +1,6 @@
 <?php
 
-use App\Post;
+use App\{User, Post};
 use Illuminate\Database\Seeder;
 
 class PostTableSeeder extends Seeder
@@ -12,16 +12,16 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = DB::table('users')->select('id')->first();
+        factory(Post::class)->times(20)->create();
 
-        foreach (range(1,10) as $i) {
+        /*foreach (range(1,10) as $i) {
 
             Post::create([
                 'title' => "Post ${i}",
                 'body' => "This is a fake body ${i}",
-                //'publish_at'=> null,
+                'publish_at'=> now(),
                 'user_id' => $user->id,
             ]);
-        }
+        }*/
     }
 }

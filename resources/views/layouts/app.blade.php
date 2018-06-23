@@ -10,7 +10,9 @@
 <body>
     <div class="container mx-auto">
         <h1>Blog</h1>
-        @yield('content')
+        <div class="p-4 bg-grey-lighter">
+            @yield('content')
+        </div>
     </div>
 </body>
 </html>
