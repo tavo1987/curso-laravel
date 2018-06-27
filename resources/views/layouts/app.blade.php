@@ -8,11 +8,24 @@
     <link rel="stylesheet" href="{{ mix('css/app.min.css') }}">
 </head>
 <body>
-    <div class="container mx-auto">
-        <h1>Blog</h1>
-        <div class="p-4 bg-grey-lighter">
-            @yield('content')
+    <header class="bg-grey-light">
+        <div class="container mx-auto flex justify-between items-center">
+            <span class="text-4xl uppercase font-bold text-grey-darker">Blog</span>
+            <nav>
+                <ul class="list-reset flex">
+                    <li><a class="no-underline text-blue px-4 hover:text-blue-dark" href="#">Home</a></li>
+                    <li><a class="no-underline text-blue px-4 hover:text-blue-dark" href="#">Contactos</a></li>
+                    <li><a class="no-underline text-blue px-4 hover:text-blue-dark" href="#">Categorías</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
+    <div class="container mx-auto py-6">
+        @yield('content')
     </div>
+
+    <footer class="bg-black text-white h-8 py-8 flex items-center justify-center">
+        Curso Laravel 2018
+    </footer>
 </body>
 </html>
