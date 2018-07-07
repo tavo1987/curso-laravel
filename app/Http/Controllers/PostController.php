@@ -17,6 +17,13 @@ class PostController extends Controller
 
     }
 
+    public function create()
+    {
+        auth()->loginUsingId(1);
+
+        return view('posts.create');
+    }
+
     public function update($id)
     {
         $noticia = Post::find($id);
@@ -37,7 +44,7 @@ class PostController extends Controller
             'publish_at' => $request->publish_at,
         ]);
 
-        return redirect()->route('posts.index')->with('success', 'Noticia creada con éxito');
+        return redirect()->route('home')->with('success', 'Noticia creada con éxito');
     }
 
     public function delete($id)
@@ -45,6 +52,6 @@ class PostController extends Controller
         $noticia = Post::find($id);
         $noticia->delete();
 
-        return redirect()->route('posts.index')->with('success', 'Noticia eliminada con éxito');
+        return redirect()->route('home')->with('success', 'Membresía guardada con éxito');
     }
 }

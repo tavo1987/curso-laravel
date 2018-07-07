@@ -26,7 +26,7 @@ class DeletePostTest extends TestCase
 
         //Assertions
         //Verificar que la noticia fue borrrada
-        $response->assertRedirect(route('posts.index'));
+        $response->assertRedirect(route('home'));
         $this->assertEquals(0, Post::count());
         $response->assertSessionHas('success');
     }

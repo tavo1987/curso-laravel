@@ -12,6 +12,19 @@ class CreatePostTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    function usuario_pueder_ver_el_formulario_crear_noticias()
+    {
+        $this->withoutExceptionHandling();
+
+        $user = factory(User::class)->create();
+
+        $response = $this->actingAs($user)->get(route('posts.create'));
+
+        $response->assertSuccessful();
+        $response->assertViewIs('posts.create');
+    }
+
+    /** @test */
     function usuario_puede_crear_noticias()
     {
         $this->withoutExceptionHandling();
@@ -29,7 +42,7 @@ class CreatePostTest extends TestCase
 
         //assertions Then
         $noticia = Post::first();
-        $response->assertRedirect();
+        $response->assertRedirect(route('home'));
         $this->assertEquals(1, Post::count());
         $this->assertEquals('Noticia Nueva', $noticia->title);
         $this->assertEquals('Description Noticia', $noticia->body);

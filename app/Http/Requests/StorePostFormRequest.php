@@ -24,7 +24,7 @@ class StorePostFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|numeric',
+            'title' => 'required',
             'body' => 'required',
             'publish_at' => 'required|date',
         ];
