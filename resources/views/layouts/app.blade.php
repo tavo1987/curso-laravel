@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="{{ mix('css/app.min.css') }}">
 </head>
 <body>
-    <header class="bg-grey-light">
+    <header class="bg-indigo">
         <div class="container mx-auto flex justify-between items-center">
-            <span class="text-4xl uppercase font-bold text-grey-darker">Blog</span>
+            <span class="text-4xl uppercase font-bold text-white py-6">Blog</span>
             <nav>
                 <ul class="list-reset flex">
-                    <li><a class="no-underline text-blue px-4 hover:text-blue-dark" href="#">Home</a></li>
-                    <li><a class="no-underline text-blue px-4 hover:text-blue-dark" href="#">Contactos</a></li>
-                    <li><a class="no-underline text-blue px-4 hover:text-blue-dark" href="#">Categorías</a></li>
+                    <li><a class="no-underline text-white px-4 hover:text-black" href="#">Home</a></li>
+                    <li><a class="no-underline text-white px-4 hover:text-black" href="#">Contactos</a></li>
+                    <li><a class="no-underline text-white px-4 hover:text-black" href="{{ route('posts.create') }}">Crear Noticia</a></li>
                 </ul>
             </nav>
         </div>

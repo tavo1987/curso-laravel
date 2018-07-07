@@ -6,7 +6,7 @@
         <a class="text-white hover:text-white-darker no-underline" href="{{ route('users') }}">Usuarios</a>
     </li>
     <li class="mr-6">
-        <a class="text-white hover:text-white-darker no-underline" href="#">Link</a>
+        <a class="text-white hover:text-white-darker no-underline" href="{{ route('posts.create') }}">Crear Noticia</a>
     </li>
     <li class="mr-6">
         <a class="text-white cursor-not-allowed no-underline" href="#">Disabled</a>
