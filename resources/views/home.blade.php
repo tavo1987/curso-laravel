@@ -19,6 +19,7 @@
                 <span class="bg-indigo text-sm text-white p-1 rounded">
                     Creador por: {{ $noticia->user->name }}
                 </span>
+                <a class="block mt-4" href="{{ route('posts.edit', $noticia) }}">Editar</a>
             </article>
         @endforeach
     </div>

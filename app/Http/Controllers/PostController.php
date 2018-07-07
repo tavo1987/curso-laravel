@@ -17,6 +17,12 @@ class PostController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $noticia = Post::find($id);
+        return view('posts.edit', compact('noticia'));
+    }
+
     public function create()
     {
         auth()->loginUsingId(1);
@@ -30,10 +36,10 @@ class PostController extends Controller
 
         $noticia->title = request()->title;
         $noticia->body = request()->body;
-        $noticia->user_id = request()->user_id;
+        $noticia->user_id = auth()->user()->id;
         $noticia->save();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', "Noticia {$noticia->id} actualizada correctamente");
     }
 
     public function store(StorePostFormRequest $request)

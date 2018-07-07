@@ -13,7 +13,7 @@
             <span class="text-4xl uppercase font-bold text-white py-6">Blog</span>
             <nav>
                 <ul class="list-reset flex">
-                    <li><a class="no-underline text-white px-4 hover:text-black" href="#">Home</a></li>
+                    <li><a class="no-underline text-white px-4 hover:text-black" href="{{ route('home') }}">Home</a></li>
                     <li><a class="no-underline text-white px-4 hover:text-black" href="#">Contactos</a></li>
                     <li><a class="no-underline text-white px-4 hover:text-black" href="{{ route('posts.create') }}">Crear Noticia</a></li>
                 </ul>
