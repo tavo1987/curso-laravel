@@ -13,7 +13,7 @@ class DeletePostTest extends TestCase
     /** @test */
     function eliminarNoticia()
     {
-        $this->withoutExceptionHandling();
+       // $this->withoutExceptionHandling();
 
         $noticia = Post::find(2);
         $noticia->delete();
