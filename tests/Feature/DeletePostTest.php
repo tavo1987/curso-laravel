@@ -9,15 +9,25 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class DeletePostTest extends TestCase
 {
+    use RefreshDatabase;
 
     /** @test */
-    function eliminarNoticia()
+    function eliminar_noticia()
     {
-       // $this->withoutExceptionHandling();
+       $this->withoutExceptionHandling();
 
-        $noticia = Post::find(2);
-        $noticia->delete();
+       //Arrange
+        //Crear noticia
+        $noticia = factory(Post::class)->create();
 
+        //Act
+        //Borrar noticia
+        $response = $this->delete('/noticias/'.$noticia->id);
 
+        //Assertions
+        //Verificar que la noticia fue borrrada
+        $response->assertRedirect(route('posts.index'));
+        $this->assertEquals(0, Post::count());
+        $response->assertSessionHas('success');
     }
 }
